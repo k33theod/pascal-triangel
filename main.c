@@ -5,15 +5,10 @@
 double  factorial (int n);
 double  factorial2 (int n);
 double bin_coefficiend (int n, int r);
-double bin_theorem(int a, int b, int n);
 void pascal_traingle(int n);
 int get_screen_width();
 
 int main(int argc, char **argv){
-	int n =5;
-    printf("Το %d  παραγοντικό είναι %g\n",n,factorial2(n));
-    printf("binomial coefficient of (9, 4) is %g \n", bin_coefficiend(9,4));
-    printf(" (7 + 8)**5  is %g \n", bin_theorem(7,8,5));
     pascal_traingle(20);
 	return 0;
 }
@@ -37,21 +32,7 @@ double  factorial2 (int n){
 }
 
 double bin_coefficiend (int n, int r){
-   // if (n<=r)
-      //  return -1;
     return  factorial(n)/(factorial(r)*factorial(n-r));
-}
-
-double bin_theorem(int a, int b, int n){
-    int r = 0;
-    double result = 0;
-    int n2=n;
-    while (r<=n){
-        result+=bin_coefficiend(n,r)*pow((double)a,n2)*pow((double)b,r);
-        r++;
-        n2--;
-    }
-    return result;
 }
 
 void pascal_traingle(int n){
@@ -63,7 +44,6 @@ void pascal_traingle(int n){
     for (int i=0;i<lines;i++){
         spaces2=spaces;
         for (int j=0;j<=line;j++){
-            
             printf("% *.0lf", spaces2,bin_coefficiend(line,j));
             spaces2=2*diff; 
         }
@@ -74,18 +54,6 @@ void pascal_traingle(int n){
 
     }
    //printf("% *.0lf\n", i,bin_coefficiend(1,0));
-}
-
-double arith_proodos(double protos_oros, int stoixeio, double difference){
-    return protos_oros + (stoixeio-1)*difference;
-}
-
-double geom_sequence(double protos_oros, int stoixeio, double difference){
-    return protos_oros * pow(difference, (double) stoixeio-1);
-}
-
-double sum_arithmetic_sequence(double protos_oros, int stoixeia, double difference){
-    return stoixeia/2*(2*protos_oros+(stoixeia-1)*difference);
 }
 
 int get_screen_width(){
