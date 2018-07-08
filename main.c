@@ -13,7 +13,6 @@ int main(int argc, char **argv){
 	return 0;
 }
 
-
 double  factorial (int n){
     if (n==0)
         return 1;
@@ -21,6 +20,7 @@ double  factorial (int n){
         return n*factorial(n-1);
 }
 
+//not in use
 double  factorial2 (int n){
     double result =1;
     int i = 1;
@@ -51,9 +51,7 @@ void pascal_traingle(int n){
         spaces-=diff;
         printf("\n");
         printf("\n");
-
     }
-   //printf("% *.0lf\n", i,bin_coefficiend(1,0));
 }
 
 int get_screen_width(){
